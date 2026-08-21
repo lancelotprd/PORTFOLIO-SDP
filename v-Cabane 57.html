@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>La Cabane 57 — Lancelot Cavalec</title>
+<meta name="description" content="Tournage photo et vidéo brut et authentique pour les réseaux sociaux à la Cabane 57, Cap Ferret. Réalisé par Lancelot Cavalec." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Archivo+Expanded:wght@600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+
+<!-- Style spécifique pour la grille de vidéos verticales -->
+<style>
+  .reels-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  .reel-frame {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 9/16;
+    background: #000;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .reel-frame video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Garde la vidéo en plein cadre sans bords noirs */
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  .reel-frame video:hover {
+    transform: scale(1.02);
+  }
+  /* Adaptation pour les tablettes et téléphones */
+  @media (max-width: 900px) {
+    .reels-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="index.html" class="brand"><span class="dot"></span>LANCELOT CAVALEC</a>
+  <div class="nav-links" id="navLinks">
+    <a href="videos.html" class="active"><span>01</span>Vidéos</a>
+    <a href="photos.html"><span>02</span>Photos</a>
+    <a href="apropos.html"><span>03</span>À propos</a>
+    <a href="index.html#contact" class="nav-cta">Contact</a>
+  </div>
+  <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+
+<section class="detail-hero">
+  <div class="scene s-coast"></div>
+  <div class="dh-inner wrap">
+    <div class="crumbs"><a href="index.html">Accueil</a> / <a href="videos.html">Vidéos & Photos</a> / La Cabane 57</div>
+    <div class="dh-cat" style="margin-top:18px">Réseaux Sociaux · Photos & Vidéos</div>
+    <h1>La Cabane 57</h1>
+  </div>
+</section>
+
+<section style="padding:0">
+  <div class="wrap">
+    <div class="meta-strip reveal">
+      <div class="m"><span class="k">Rôle</span><span class="v">Réa. / Cadre / Photo</span></div>
+      <div class="m"><span class="k">Client</span><span class="v">La Cabane 57</span></div>
+      <div class="m"><span class="k">Date</span><span class="v">14 Juin 2026</span></div>
+      <div class="m"><span class="k">Format</span><span class="v">Web / Réseaux Sociaux</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="pad">
+  <div class="wrap">
+    <div class="lede reveal">
+      <p class="big">Un tournage photo et vidéo pensé pour la création de contenu réseaux sociaux, au cœur de <b>La Cabane 57</b> à Piraillan. Un rendu très brut et authentique qui traduit toute la beauté et la rudesse de ce métier sur la presqu'île du Cap Ferret.</p>
+      <div class="side">
+        <span class="label">Crédits</span>
+        <p>Réalisation — Lancelot Cavalec</p>
+        <p>Image (Vidéo & Photo) — Lancelot Cavalec</p>
+        <p>Montage — Lancelot Cavalec</p>
+        <p>Production — Lancelot Cavalec</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pad" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head reveal"><div><div class="eyebrow">Vidéos Verticales</div></div>
+      <p>Cliquez sur une vidéo pour activer le son et l'écouter.</p>
+    </div>
+    
+    <div class="reels-grid reveal">
+      <!-- Les onclick ont été retirés, le script en bas s'occupe de tout ! -->
+      <div class="reel-frame">
+        <video src="Vidéos/Cabane 57/V1-0001_Cabane_57_1080_00090000.mp4" autoplay loop muted playsinline></video>
+      </div>
+      <div class="reel-frame">
+        <video src="Vidéos/Cabane 57/V1-0002_Cabane_57_1080_00090000.mp4" autoplay loop muted playsinline></video>
+      </div>
+      <div class="reel-frame">
+        <video src="Vidéos/Cabane 57/V1-0003_Cabane_57_1080_00090000.mp4" autoplay loop muted playsinline></video>
+      </div>
+      <div class="reel-frame">
+        <video src="Vidéos/Cabane 57/V1-0004_Cabane_57_1080_00090000.mp4" autoplay loop muted playsinline></video>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pad" style="padding-top:40px">
+  <div class="wrap">
+    <div class="sec-head reveal"><div><div class="eyebrow">Stills & Photos</div></div>
+      <p>Cliquez sur une image pour l'agrandir.</p></div>
+    <div class="gallery reveal">
+      <div class="shot" data-cap="La Cabane 57 à Piraillan"><div class="scene s-coast"></div><div class="ar" style="aspect-ratio:3/2"></div><div class="cap">La Cabane 57 à Piraillan</div></div>
+      <div class="shot" data-cap="Le travail brut de l'ostréiculture"><div class="scene s-dusk"></div><div class="ar" style="aspect-ratio:4/5"></div><div class="cap">Le travail brut de l'ostréiculture</div></div>
+      <div class="shot" data-cap="Lumière matinale sur le bassin"><div class="scene s-summit"></div><div class="ar" style="aspect-ratio:16/9"></div><div class="cap">Lumière matinale sur le bassin</div></div>
+      <div class="shot" data-cap="Détail des outils et du métier"><div class="scene s-pine"></div><div class="ar" style="aspect-ratio:3/2"></div><div class="cap">Détail des outils et du métier</div></div>
+      <div class="shot" data-cap="Portrait authentique sur la presqu'île"><div class="scene s-forest"></div><div class="ar" style="aspect-ratio:4/5"></div><div class="cap">Portrait authentique sur la presqu'île</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="pad" style="padding-top:0">
+  <div class="wrap">
+    <div class="proc reveal">
+      <div class="label">Intention</div>
+      <div>
+        <p>Réalisé entièrement en solo, ce projet avait pour but de capturer l'essence même de la Cabane 57. L'approche s'est voulue <b>sans artifices, très documentaire</b>, pour respecter l'identité de Piraillan.</p>
+        <p>Que ce soit en photographie ou en vidéo, l'étalonnage et le traitement des images traduisent cette volonté d'authenticité, mettant en lumière le geste, la matière et l'atmosphère unique de la presqu'île du Cap Ferret.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pad" style="padding-top:0">
+  <div class="wrap">
+    <div class="next reveal">
+      <div><div class="lab">Projet suivant</div></div>
+      <a class="nx" href="v-Le Crock.html">Chateau Le Crock FPV
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="contact-bg"></div>
+  <div class="contact-inner wrap reveal">
+    <div class="eyebrow">Contact</div>
+    <h2>Un projet<br><span class="o">similaire ?</span></h2>
+    <p>Discutons de votre vision et de la meilleure façon de la mettre en images.</p>
+    <a class="mail mono" href="mailto:lancelot.prd@gmail.com">lancelot.prd@gmail.com
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+    </a>
+    <div class="socials">
+      <a href="https://www.instagram.com/lancelot_production?igsh=Y2lub2p3eTRvcmRy&utm_source=qr" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://youtube.com/@lancelotprod?si=JdwF8JsU1QQTY0bs" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://www.linkedin.com/in/lancelot-cavalec-45347119b?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://vimeo.com/user236841337?fl=pp&fe=sh" target="_blank" rel="noopener">Vimeo</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <a href="index.html" class="brand"><span class="dot"></span>LANCELOT CAVALEC</a>
+    <div class="c">Réalisateur &amp; Photographe · Sport &amp; Outdoor</div>
+    <div class="c">© 2026 — Tous droits réservés</div>
+  </div>
+</footer>
+
+<!-- SCRIPT GESTION DES REELS -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const reels = document.querySelectorAll('.reel-frame video');
+
+    reels.forEach(video => {
+      video.addEventListener('click', function() {
+        // 1. On parcourt toutes les autres vidéos pour les couper et les mettre en pause
+        reels.forEach(v => {
+          if (v !== this) {
+            v.pause();
+            v.muted = true;
+            v.controls = false;
+          }
+        });
+
+        // 2. On active celle sur laquelle on vient de cliquer
+        this.muted = false;
+        this.controls = true;
+        if (this.paused) {
+          this.play();
+        }
+      });
+    });
+  });
+</script>
+
+<script src="script.js"></script>
+</body>
+</html>

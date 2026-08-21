@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>De la vigne au verre — Lancelot Cavalec</title>
+<meta name="description" content="Documentaire d'ascension réalisé par Lancelot Cavalec, soutenu par les marques de l'outdoor." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Archivo+Expanded:wght@600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav id="nav">
+  <a href="index.html" class="brand"><span class="dot"></span>LANCELOT CAVALEC</a>
+  <div class="nav-links" id="navLinks">
+    <a href="videos.html" class="active"><span>01</span>Vidéos</a>
+    <a href="photos.html"><span>02</span>Photos</a>
+    <a href="apropos.html"><span>03</span>À propos</a>
+    <a href="index.html#contact" class="nav-cta">Contact</a>
+  </div>
+  <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+
+<section class="detail-hero">
+  <div class="scene s-ridge"></div>
+  <div class="dh-inner wrap">
+    <div class="crumbs"><a href="index.html">Accueil</a> / <a href="videos.html">Vidéo</a> / De la vigne au verre</div>
+    <div class="dh-cat" style="margin-top:18px">Film de marque · 16:9 · 1 min</div>
+    <h1>De la vigne au verre</h1>
+  </div>
+</section>
+
+<section style="padding:0">
+  <div class="wrap">
+    <div class="meta-strip reveal">
+      <div class="m"><span class="k">Rôle</span><span class="v">Réa. / DOP</span></div>
+      <div class="m"><span class="k">Client</span><span class="v">Leoville Poyferré</span></div>
+      <div class="m"><span class="k">Année</span><span class="v">2025 - 2026</span></div>
+      <div class="m"><span class="k">Format</span><span class="v">4K · 16:9</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="pad">
+  <div class="wrap">
+    <div class="lede reveal">
+      <p class="big">Un film authentique, tournée au cœur d'un château emblématique du Médoc.<br> <b>De la vigne au verre </b> révèle un savoir-faire unique, là où la terre, le geste et le temps façonnent chaque bouteille.</p>
+      <div class="side">
+        <span class="label">Crédits</span>
+        <p>Réalisation — Lancelot Cavalec</p>
+        <p>Image — Lancelot Cavalec</p>
+        <p>Montage — Lancelot Cavalec</p>
+        <!-- <p>Musique — Artlist</p> -->
+        <p>Production — Lancelot cavalec & Leoville poyferré</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pad" style="padding-top:0">
+  <div class="wrap">
+    <div class="video-frame reveal" style="border:none; position:relative; background-color:#111;">
+      
+      <!-- Le style de l'icône de chargement -->
+      <style>
+        .spinner {
+          position: absolute; top: 50%; left: 50%;
+          width: 40px; height: 40px; margin: -20px 0 0 -20px;
+          border: 4px solid rgba(255,255,255,0.2);
+          border-top: 4px solid #fff;
+          border-radius: 50%;
+          animation: spin 1s linear infinite;
+          z-index: 3;
+        }
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+      </style>
+      
+      <!-- L'icône de chargement -->
+      <div class="spinner" id="loader"></div>
+
+      <!-- Le conteneur vidéo natif avec le lien Backblaze intégré -->
+      <video 
+        id="bg-video"
+        src="https://f003.backblazeb2.com/file/Portfolio33CAVALEC/LP_V4_1080.mp4" 
+        autoplay 
+        loop 
+        muted 
+        playsinline
+        preload="auto"
+        style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:4; cursor:pointer;"
+        onplaying="document.getElementById('loader').style.display='none';"
+        onwaiting="document.getElementById('loader').style.display='block';"
+        onclick="this.muted = false; this.controls = true; this.style.objectFit = 'contain'; this.style.backgroundColor = '#000';"
+      >
+        Votre navigateur ne supporte pas la lecture de vidéos HTML5.
+      </video>
+    </div>
+  </div>
+</section>
+
+<section class="pad" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head reveal"><div><div class="eyebrow">Stills</div></div>
+      <p>Cliquez sur une image pour l'agrandir.</p></div>
+    <div class="gallery reveal">
+      <div class="shot" data-cap="Lever de soleil sur l'arête — plan d'ouverture"><div class="scene s-ridge"></div><div class="ar" style="aspect-ratio:3/2"></div><div class="cap">Lever de soleil sur l'arête — plan d'ouverture</div></div>
+      <div class="shot" data-cap="Bivouac à 3 200 m"><div class="scene s-alpine"></div><div class="ar" style="aspect-ratio:4/5"></div><div class="cap">Bivouac à 3 200 m</div></div>
+      <div class="shot" data-cap="Dernière longueur avant le sommet"><div class="scene s-summit"></div><div class="ar" style="aspect-ratio:3/2"></div><div class="cap">Dernière longueur avant le sommet</div></div>
+      <div class="shot" data-cap="Portrait, lumière rasante"><div class="scene s-dusk"></div><div class="ar" style="aspect-ratio:4/5"></div><div class="cap">Portrait, lumière rasante</div></div>
+      <div class="shot" data-cap="Traversée du glacier"><div class="scene s-glacier"></div><div class="ar" style="aspect-ratio:16/9"></div><div class="cap">Traversée du glacier</div></div>
+      <div class="shot" data-cap="La météo se referme"><div class="scene s-storm"></div><div class="ar" style="aspect-ratio:3/2"></div><div class="cap">La météo se referme</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="pad" style="padding-top:0">
+  <div class="wrap">
+    <div class="proc reveal">
+      <div class="label">Intention</div>
+      <div>
+        <p>Le choix à été de <b> se focaliser sur le geste et l'outils</b> : pas de mise en scène, juste le travail de la vigne jusque dans les chais. Tout a été tourné en autonomie, <b>sur quatres jours</b>, repartis sur un an pour assiter à <b>toutes les étapes de la vinification.</b></p>
+        <p>Le montage alterne séquences contemplatives et temps forts, porté par un étalonnage <b>teal & orange</b> qui sépare l'ombre froide de la terre et du metal du bois et du fruit réchauffés par la lumière.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pad" style="padding-top:0">
+  <div class="wrap">
+    <div class="next reveal">
+      <div><div class="lab">Projet suivant</div></div>
+      <a class="nx" href="v-Cabane 57.html">La Cabane 57
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="contact-bg"></div>
+  <div class="contact-inner wrap reveal">
+    <div class="eyebrow">Contact</div>
+    <h2>Un projet<br><span class="o">similaire ?</span></h2>
+    <p>Discutons de votre vision et de la meilleure façon de la mettre en images.</p>
+    <a class="mail mono" href="mailto:lancelot.prd@gmail.com">lancelot.prd@gmail.com
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+    </a>
+    <div class="socials">
+      <a href="https://www.instagram.com/lancelot_production?igsh=Y2lub2p3eTRvcmRy&utm_source=qr" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://youtube.com/@lancelotprod?si=JdwF8JsU1QQTY0bs" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://www.linkedin.com/in/lancelot-cavalec-45347119b?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://vimeo.com/user236841337?fl=pp&fe=sh" target="_blank" rel="noopener">Vimeo</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <a href="index.html" class="brand"><span class="dot"></span>LANCELOT CAVALEC</a>
+    <div class="c">Réalisateur &amp; Photographe · Sport &amp; Outdoor</div>
+    <div class="c">© 2026 — Tous droits réservés</div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

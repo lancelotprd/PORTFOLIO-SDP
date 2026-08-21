@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Lancelot Cavalec — Sport & Outdoor</title>
+<meta name="description" content="Lancelot Cavalec, réalisateur et photographe spécialisé sport et outdoor. Films de marque, documentaires, campagnes et séries photo." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Archivo+Expanded:wght@600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+
+<!-- ===== Réglages spécifiques à la page d'accueil (hero vidéo + parallaxe) ===== -->
+<style>
+  .hero{justify-content:flex-start;overflow:hidden}
+  .hero-video{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none}
+  .hero-video iframe{
+    position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+    width:100vw;height:56.25vw;            /* format 16:9 a partir de la largeur */
+    min-height:100vh;min-width:177.78vh;   /* garantit que la video couvre tout */
+    border:0;
+  }
+  .hero-overlay{
+    position:absolute;inset:0;z-index:2;
+    background:linear-gradient(180deg,rgba(8,8,10,.45),rgba(8,8,10,.20) 38%,rgba(8,8,10,.92));
+  }
+  .hero-inner{
+    position:relative;z-index:6;width:100%;
+    min-height:100svh;display:flex;flex-direction:column;justify-content:space-between;
+    padding:104px 0 64px;
+  }
+  .hero-bottom{animation:rise .9s ease .3s both}
+  .hero .title{font-size:clamp(46px,11vw,150px);line-height:.92}
+  .hero .role{margin-top:24px}
+  @media(prefers-reduced-motion:reduce){.hero-bottom{animation:none}}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="index.html" class="brand"><span class="dot"></span>LANCELOT CAVALEC</a>
+  <div class="nav-links" id="navLinks">
+    <a href="videos.html"><span>01</span>Vidéos</a>
+    <a href="photos.html"><span>02</span>Photos</a>
+    <a href="apropos.html"><span>03</span>À propos</a>
+    <a href="#contact" class="nav-cta">Contact</a>
+  </div>
+  <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- ===================== HERO VIDEO + PARALLAXE ===================== -->
+<header class="hero" id="top">
+  <!-- video de fond -->
+  <div class="hero-video" id="heroVideo">
+  <iframe
+    src="https://player.vimeo.com/video/1203402644?background=1&autoplay=1&loop=1&muted=1&autopause=0"
+    title="Showreel" frameborder="0"
+    allow="autoplay; fullscreen" allowfullscreen></iframe>
+  </div>
+  <div class="hero-overlay"></div>
+
+  <!-- bandes cinema -->
+  <div class="bar top"></div>
+  <div class="bar bot"></div>
+
+  <div class="hero-inner wrap" id="heroInner">
+    <div class="hero-top">
+      <div class="timecode mono" style="margin-left:auto"><span class="rec"></span><span id="tc">00:00:00:00</span></div>
+    </div>
+
+    <div class="hero-bottom">
+      <h1 class="title">Lancelot<br>Cavalec</h1>
+      <div class="hero-foot">
+        <div class="role mono">
+          Sport · Outdoor · Aventure<br>
+          Films de marque — Reportages — Digitale
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ===================== DISCIPLINES ===================== -->
+<section class="pad">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div>
+        <div class="eyebrow">Deux regards</div>
+        <h2 style="margin-top:16px">Mes Projets</h2>
+      </div>
+
+    </div>
+
+    <div class="split">
+      <!-- carte Video -->
+      <a class="disc reveal" href="videos.html">
+        <div class="scene disc-video">
+          <iframe
+            src="https://player.vimeo.com/video/1203402644?background=1&autoplay=1&loop=1&muted=1&autopause=0"
+            title="Vidéos" frameborder="0"
+            allow="autoplay; fullscreen"></iframe>
+        </div>
+        <div class="disc-c">
+          <span class="k">01 — Motion</span>
+          <h3>Vidéos</h3>
+          <!-- <p>Films de marque, reportages et campagnes.</p> -->
+          <span class="go mono">Voir les films
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </div>
+      </a>
+
+      <!-- carte Photo (carrousel automatique en fond) -->
+      <a class="disc reveal" href="photos.html">
+        <div class="scene carousel" id="monCarrousel">
+          <div class="carousel-track"></div>
+        </div>
+        <div class="disc-c">
+          <span class="k">02 — Image</span>
+          <h3>Photos</h3>
+          <p>Séries de reportage et de paysage, de la haute montagne au bord de mer.</p>
+          <span class="go mono">Voir les séries
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== A PROPOS (apercu) ===================== -->
+<section class="pad" style="background:var(--ink-2)">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="portrait reveal">
+        <img class="scene"
+          src="images/PHOTOS_AGENCE-33.jpg"
+          alt="Sommet au lever du soleil">
+      </div>
+      <div class="about-txt reveal">
+        <div class="eyebrow">À propos</div>
+        <h2>Raconter<br>le mouvement</h2>
+         <p>Reportages, films de marque, contenus pour les réseaux sociaux : en <b>photos</b> comme en <b>vidéos</b>, je développe une approche originale dans mes prises de vue. Je vais là où l'œil n'a pas l'habitude, j'amène un <b>regard neuf</b> sur une discipline, un lieu, une histoire. Le <b>drone</b> et notamment le <b>FPV</b> fait partie de ces angles que je recherche pour offrir une perspective inédite.
+        <p>Je ne cherche pas la perfection, mais la <b>beauté</b> et l'<b>émotion</b>.<br>
+        <a class="btn" href="apropos.html" style="margin-top:30px">Mon parcours
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CLIENTS =====================
+<section style="border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)">
+  <div class="wrap clients-pad reveal">
+    <div class="clients-lab">Ils m'ont fait confiance</div>
+    <div class="logos">
+      <span>Overstride</span><span>Aström</span><span>Verticale</span><span>Kova</span>
+      <span>Massif&nbsp;Co.</span><span>Nord&nbsp;Outdoor</span><span>Ultra-Trail</span>
+    </div>
+  </div>
+</section>
+-->
+
+<!-- ===================== CONTACT ===================== -->
+<section class="contact" id="contact">
+  <div class="contact-bg"></div>
+  <div class="contact-inner wrap reveal">
+    <div class="eyebrow">Contact</div>
+    <h2>Un projet<br><span class="o">en tête ?</span></h2>
+    <p>Film de marque, contenus réseaux sociaux, captation d'événement ou reportage photos/vidéos— parlons de votre vision et de la meilleure façon de la mettre en lumière.</p>
+    <a class="mail mono" href="mailto:lancelot.prd@gmail.com">lancelot.prd@gmail.com
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+    </a>
+    <div class="socials">
+      <a href="https://www.instagram.com/lancelot_production?igsh=Y2lub2p3eTRvcmRy&utm_source=qr" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://youtube.com/@lancelotprod?si=JdwF8JsU1QQTY0bs" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://www.linkedin.com/in/lancelot-cavalec-45347119b?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://vimeo.com/user236841337?fl=pp&fe=sh" target="_blank" rel="noopener">Vimeo</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <a href="index.html" class="brand"><span class="dot"></span>LANCELOT CAVALEC</a>
+    <!--<div class="c">Sport &amp; Outdoor · Disponible partout</div> -->
+    <div class="c">© 2026 — Tous droits réservés</div>
+  </div>
+</footer>
+
+<!-- ===================== SCRIPTS ===================== -->
+<script src="script.js"></script>
+
+<!-- carrousel de la carte Photo -->
+<script>
+  // LA SEULE LISTE A MODIFIER : vos photos (noms SANS accent ni espace)
+  const mesPhotos = [
+    "top/moto_vignes-01.jpg",
+    "top/moto_vignes-02.jpg"
+  ];
+  (function () {
+    const track = document.querySelector("#monCarrousel .carousel-track");
+    if(!track) return;
+    let i = 0;
+    mesPhotos.forEach(src => {
+      const img = document.createElement("img");
+      img.src = src; img.alt = "";
+      track.appendChild(img);
+    });
+    setInterval(() => {
+      i = (i + 1) % mesPhotos.length;
+      track.style.transform = "translateX(" + (-i * 100) + "%)";
+    }, 4000);
+  })();
+</script>
+<style>
+  .carousel{position:relative;overflow:hidden}
+  .carousel-track{display:flex;height:100%;transition:transform .8s cubic-bezier(.16,1,.3,1)}
+  .carousel-track img{width:100%;height:100%;object-fit:cover;flex-shrink:0}
+</style>
+
+<!-- effet parallaxe du hero -->
+<script>
+  (function(){
+    const hv = document.getElementById('heroVideo');
+    const hi = document.getElementById('heroInner');
+    if(!hv || !hi) return;
+    if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    let raf;
+    function px(){
+      const y = window.scrollY;
+      hv.style.transform = 'translateY(' + (y * 0.35) + 'px)';
+      hi.style.transform = 'translateY(' + (y * 0.16) + 'px)';
+      hi.style.opacity   = String(Math.max(0, 1 - y / 700));
+    }
+    window.addEventListener('scroll', () => {
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(px);
+    }, {passive:true});
+  })();
+</script>
+</body>
+</html>
