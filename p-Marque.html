@@ -1,5 +1,66 @@
 <!DOCTYPE html>
 <html lang="fr">
+
+<style>
+  /* --- VOS PHOTOS (Même système que la page Sport) --- */
+  .photo-produit-1 { background-image: url('Photos/Produits/CHEMIN_DE_TA_PHOTO_1.jpg') !important; background-size: cover !important; background-position: center !important; }
+  .photo-produit-2 { background-image: url('Photos/Produits/CHEMIN_DE_TA_PHOTO_2.jpg') !important; background-size: cover !important; background-position: center !important; }
+  .photo-produit-3 { background-image: url('Photos/Produits/CHEMIN_DE_TA_PHOTO_3.jpg') !important; background-size: cover !important; background-position: center !important; }
+  .photo-produit-4 { background-image: url('Photos/Produits/CHEMIN_DE_TA_PHOTO_4.jpg') !important; background-size: cover !important; background-position: center !important; }
+  .photo-produit-5 { background-image: url('Photos/Produits/CHEMIN_DE_TA_PHOTO_5.jpg') !important; background-size: cover !important; background-position: center !important; }
+  .photo-produit-6 { background-image: url('Photos/Produits/CHEMIN_DE_TA_PHOTO_6.jpg') !important; background-size: cover !important; background-position: center !important; }
+  .photo-produit-7 { background-image: url('Photos/Produits/CHEMIN_DE_TA_PHOTO_7.jpg') !important; background-size: cover !important; background-position: center !important; }
+  .photo-produit-8 { background-image: url('Photos/Produits/CHEMIN_DE_TA_PHOTO_8.jpg') !important; background-size: cover !important; background-position: center !important; }
+
+  /* --- LIGHTBOX UNIQUE ET TAILLE RÉELLE --- */
+  #simple-lightbox {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 999999999;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Image en taille réelle, PAS cropée */
+  #lb-image {
+    max-width: 90vw;
+    max-height: 90vh;
+    object-fit: contain; 
+  }
+
+  /* Boutons de navigation */
+  .lb-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    color: white;
+    font-size: 60px;
+    border: none;
+    cursor: pointer;
+    padding: 20px;
+    z-index: 1000000000;
+  }
+  
+  .lb-btn:hover { color: #ccc; }
+  #lb-prev { left: 10px; }
+  #lb-next { right: 10px; }
+
+  /* Bouton Fermer */
+  #lb-close {
+    position: absolute;
+    top: 15px; right: 30px;
+    background: transparent;
+    color: white;
+    font-size: 50px;
+    border: none;
+    cursor: pointer;
+    z-index: 1000000000;
+  }
+</style>
+
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -24,7 +85,7 @@
 </nav>
 
 <section class="detail-hero">
-  <div class="scene s-desert"></div>
+  <div class="scene photo-produit-1"></div>
   <div class="dh-inner wrap">
     <div class="crumbs"><a href="index.html">Accueil</a> / <a href="photos.html">Photo</a> / Produits</div>
     <div class="dh-cat" style="margin-top:18px">Portfolio · Studio & Lifestyle</div>
@@ -61,16 +122,16 @@
 <section class="pad" style="padding-top:0">
   <div class="wrap">
     <div class="sec-head reveal"><div><div class="eyebrow">Galerie</div></div>
-      <p>Cliquez sur une image pour l'agrandir.</p></div>
+      <p>Cliquez sur une image pour l'afficher en plein écran.</p></div>
     <div class="gallery reveal">
-      <div class="shot" data-cap="Bouteille Grand Cru en clair-obscur"><div class="scene s-ridge"></div><div class="ar" style="aspect-ratio:3/2"></div><div class="cap">Bouteille Grand Cru en clair-obscur</div></div>
-      <div class="shot" data-cap="Détail technique d'une chaussure de trail"><div class="scene s-pine"></div><div class="ar" style="aspect-ratio:4/3"></div><div class="cap">Détail technique d'une chaussure de trail</div></div>
-      <div class="shot" data-cap="Équipement outdoor en situation réelle"><div class="scene s-alpine"></div><div class="ar" style="aspect-ratio:2/3"></div><div class="cap">Équipement outdoor en situation réelle</div></div>
-      <div class="shot" data-cap="Mise en scène lifestyle, prêt-à-porter de luxe"><div class="scene s-dusk"></div><div class="ar" style="aspect-ratio:3/2"></div><div class="cap">Mise en scène lifestyle, prêt-à-porter de luxe</div></div>
-      <div class="shot" data-cap="Reflets et transparence du verre"><div class="scene s-glacier"></div><div class="ar" style="aspect-ratio:4/5"></div><div class="cap">Reflets et transparence du verre</div></div>
-      <div class="shot" data-cap="Texture de tissu technique en macro"><div class="scene s-storm"></div><div class="ar" style="aspect-ratio:1/1"></div><div class="cap">Texture de tissu technique en macro</div></div>
-      <div class="shot" data-cap="Composition minimaliste en studio"><div class="scene s-coast"></div><div class="ar" style="aspect-ratio:3/4"></div><div class="cap">Composition minimaliste en studio</div></div>
-      <div class="shot" data-cap="Accessoires de sport intégrés dans la nature"><div class="scene s-summit"></div><div class="ar" style="aspect-ratio:3/2"></div><div class="cap">Accessoires de sport intégrés dans la nature</div></div>
+      <div class="shot" data-cap="Bouteille Grand Cru en clair-obscur"><div class="scene photo-produit-1"></div><div class="ar" style="aspect-ratio:3/2"></div><div class="cap">Bouteille Grand Cru en clair-obscur</div></div>
+      <div class="shot" data-cap="Détail technique d'une chaussure de trail"><div class="scene photo-produit-2"></div><div class="ar" style="aspect-ratio:4/3"></div><div class="cap">Détail technique d'une chaussure de trail</div></div>
+      <div class="shot" data-cap="Équipement outdoor en situation réelle"><div class="scene photo-produit-3"></div><div class="ar" style="aspect-ratio:2/3"></div><div class="cap">Équipement outdoor en situation réelle</div></div>
+      <div class="shot" data-cap="Mise en scène lifestyle, prêt-à-porter de luxe"><div class="scene photo-produit-4"></div><div class="ar" style="aspect-ratio:3/2"></div><div class="cap">Mise en scène lifestyle, prêt-à-porter de luxe</div></div>
+      <div class="shot" data-cap="Reflets et transparence du verre"><div class="scene photo-produit-5"></div><div class="ar" style="aspect-ratio:4/5"></div><div class="cap">Reflets et transparence du verre</div></div>
+      <div class="shot" data-cap="Texture de tissu technique en macro"><div class="scene photo-produit-6"></div><div class="ar" style="aspect-ratio:1/1"></div><div class="cap">Texture de tissu technique en macro</div></div>
+      <div class="shot" data-cap="Composition minimaliste en studio"><div class="scene photo-produit-7"></div><div class="ar" style="aspect-ratio:3/4"></div><div class="cap">Composition minimaliste en studio</div></div>
+      <div class="shot" data-cap="Accessoires de sport intégrés dans la nature"><div class="scene photo-produit-8"></div><div class="ar" style="aspect-ratio:3/2"></div><div class="cap">Accessoires de sport intégrés dans la nature</div></div>
     </div>
   </div>
 </section>
@@ -107,7 +168,7 @@
     <a class="mail mono" href="mailto:lancelot.prd@gmail.com">lancelot.prd@gmail.com
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
     </a>
-  <div class="socials">
+    <div class="socials">
       <a href="https://www.instagram.com/lancelot_production?igsh=Y2lub2p3eTRvcmRy&utm_source=qr" target="_blank" rel="noopener">Instagram</a>
       <a href="https://youtube.com/@lancelotprod?si=JdwF8JsU1QQTY0bs" target="_blank" rel="noopener">YouTube</a>
       <a href="https://www.linkedin.com/in/lancelot-cavalec-45347119b?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener">LinkedIn</a>
@@ -124,6 +185,60 @@
   </div>
 </footer>
 
+<!-- LE BLOC CACHÉ POUR AFFICHER LA PHOTO EN TAILLE RÉELLE -->
+<div id="simple-lightbox">
+  <button id="lb-close">&times;</button>
+  <button id="lb-prev" class="lb-btn">&#10094;</button>
+  <img id="lb-image" src="" alt="">
+  <button id="lb-next" class="lb-btn">&#10095;</button>
+</div>
+
 <script src="script.js"></script>
+
+<!-- SCRIPT DE NAVIGATION LIGHTBOX -->
+<script>
+  window.addEventListener('load', function() {
+    var shots = document.querySelectorAll('.shot');
+    var lightbox = document.getElementById('simple-lightbox');
+    var img = document.getElementById('lb-image');
+    var currentIndex = 0;
+
+    function afficherImage(index) {
+      currentIndex = index;
+      var scene = shots[index].querySelector('.scene');
+      var bg = window.getComputedStyle(scene).backgroundImage;
+      var url = bg.replace(/^url\(["']?/, '').replace(/["']?\)$/, ''); 
+      
+      img.src = url;
+      lightbox.style.display = 'flex';
+    }
+
+    for (var i = 0; i < shots.length; i++) {
+      (function(index) {
+        shots[index].style.cursor = 'pointer';
+        shots[index].addEventListener('click', function(e) {
+          e.stopPropagation(); 
+          e.stopImmediatePropagation();
+          afficherImage(index);
+        }, true); 
+      })(i);
+    }
+
+    document.getElementById('lb-close').addEventListener('click', function() {
+      lightbox.style.display = 'none';
+    });
+
+    document.getElementById('lb-next').addEventListener('click', function() {
+      currentIndex = (currentIndex + 1) % shots.length;
+      afficherImage(currentIndex);
+    });
+
+    document.getElementById('lb-prev').addEventListener('click', function() {
+      currentIndex = (currentIndex - 1 + shots.length) % shots.length;
+      afficherImage(currentIndex);
+    });
+  });
+</script>
+
 </body>
 </html>
