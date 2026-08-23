@@ -60,26 +60,41 @@
 
 <section class="pad" style="padding-top:0">
   <div class="wrap">
-    <div class="video-frame reveal">
-      <div class="scene s-desert"></div>
-      <span class="tl mono">REC · 00:00:00:00</span>
-      <div class="center">
-        <div class="pbig"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
-        <span class="hint mono">Intégrez votre vidéo YouTube / Vimeo ici</span>
-      </div>
-    </div>
-  </div>
-</section>
+    <div class="video-frame reveal" style="border:none; position:relative; background-color:#111;">
+      
+      <!-- Le style de l'icône de chargement -->
+      <style>
+        .spinner {
+          position: absolute; top: 50%; left: 50%;
+          width: 40px; height: 40px; margin: -20px 0 0 -20px;
+          border: 4px solid rgba(255,255,255,0.2);
+          border-top: 4px solid #fff;
+          border-radius: 50%;
+          animation: spin 1s linear infinite;
+          z-index: 3;
+        }
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+      </style>
+      
+      <!-- L'icône de chargement -->
+      <div class="spinner" id="loader"></div>
 
-<section class="pad" style="padding-top:0">
-  <div class="wrap">
-    <div class="sec-head reveal"><div><div class="eyebrow">Stills</div></div>
-      <p>Cliquez sur une image pour l'agrandir.</p></div>
-    <div class="gallery reveal">
-      <div class="shot" data-cap="Survol des vignes du Château Le Crock"><div class="scene s-desert"></div><div class="ar" style="aspect-ratio:3/2"></div><div class="cap">Survol des vignes du Château Le Crock</div></div>
-      <div class="shot" data-cap="Plongée dynamique en FPV"><div class="scene s-dune"></div><div class="ar" style="aspect-ratio:16/9"></div><div class="cap">Plongée dynamique en FPV</div></div>
-      <div class="shot" data-cap="Le domaine vu du ciel"><div class="scene s-dusk"></div><div class="ar" style="aspect-ratio:4/5"></div><div class="cap">Le domaine vu du ciel</div></div>
-      <div class="shot" data-cap="Passage au plus près des chais"><div class="scene s-ridge"></div><div class="ar" style="aspect-ratio:3/2"></div><div class="cap">Passage au plus près des chais</div></div>
+      <!-- Le conteneur vidéo natif avec le lien Backblaze intégré -->
+      <video 
+        id="bg-video"
+        src="https://f003.backblazeb2.com/file/Portfolio33CAVALEC/LP_V4_1080.mp4" 
+        autoplay 
+        loop 
+        muted 
+        playsinline
+        preload="auto"
+        style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:4; cursor:pointer;"
+        onplaying="document.getElementById('loader').style.display='none';"
+        onwaiting="document.getElementById('loader').style.display='block';"
+        onclick="this.muted = false; this.controls = true; this.style.objectFit = 'contain'; this.style.backgroundColor = '#000';"
+      >
+        Votre navigateur ne supporte pas la lecture de vidéos HTML5.
+      </video>
     </div>
   </div>
 </section>

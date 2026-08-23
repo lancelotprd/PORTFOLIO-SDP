@@ -60,34 +60,41 @@
 
 <section class="pad" style="padding-top:0">
   <div class="wrap">
-    <div class="video-frame reveal" style="border:none;">
-      <!-- Le conteneur vidéo natif -->
+    <div class="video-frame reveal" style="border:none; position:relative; background-color:#111;">
+      
+      <!-- Le style de l'icône de chargement -->
+      <style>
+        .spinner {
+          position: absolute; top: 50%; left: 50%;
+          width: 40px; height: 40px; margin: -20px 0 0 -20px;
+          border: 4px solid rgba(255,255,255,0.2);
+          border-top: 4px solid #fff;
+          border-radius: 50%;
+          animation: spin 1s linear infinite;
+          z-index: 3;
+        }
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+      </style>
+      
+      <!-- L'icône de chargement -->
+      <div class="spinner" id="loader"></div>
+
+      <!-- Le conteneur vidéo natif avec le lien Backblaze intégré -->
       <video 
         id="bg-video"
-        src="Vidéos/V1-0001_Simon_moto_1080_00090000.mp4" 
+        src="https://f003.backblazeb2.com/file/Portfolio33CAVALEC/V1-0001_Simon_moto_1080_00090000.mp4" 
         autoplay 
         loop 
         muted 
         playsinline
+        preload="auto"
         style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:4; cursor:pointer;"
+        onplaying="document.getElementById('loader').style.display='none';"
+        onwaiting="document.getElementById('loader').style.display='block';"
         onclick="this.muted = false; this.controls = true; this.style.objectFit = 'contain'; this.style.backgroundColor = '#000';"
       >
         Votre navigateur ne supporte pas la lecture de vidéos HTML5.
       </video>
-    </div>
-  </div>
-</section>
-
-<section class="pad" style="padding-top:0">
-  <div class="wrap">
-    <div class="sec-head reveal"><div><div class="eyebrow">Stills</div></div>
-      <p>Cliquez sur une image pour l'agrandir.</p></div>
-    <div class="gallery reveal">
-      <div class="shot" data-cap="Passage à pleine vitesse entre les arbres"><div class="scene s-forest"></div><div class="ar" style="aspect-ratio:3/2"></div><div class="cap">Passage à pleine vitesse entre les arbres</div></div>
-      <div class="shot" data-cap="Suivi dynamique en drone FPV"><div class="scene s-pine"></div><div class="ar" style="aspect-ratio:4/5"></div><div class="cap">Suivi dynamique en drone FPV</div></div>
-      <div class="shot" data-cap="Saut en contre-plongée"><div class="scene s-glacier"></div><div class="ar" style="aspect-ratio:16/9"></div><div class="cap">Saut en contre-plongée</div></div>
-      <div class="shot" data-cap="Freinage et projection de terre"><div class="scene s-storm"></div><div class="ar" style="aspect-ratio:3/2"></div><div class="cap">Freinage et projection de terre</div></div>
-      <div class="shot" data-cap="Gros plan regard sous le casque"><div class="scene s-dusk"></div><div class="ar" style="aspect-ratio:4/5"></div><div class="cap">Gros plan regard sous le casque</div></div>
     </div>
   </div>
 </section>

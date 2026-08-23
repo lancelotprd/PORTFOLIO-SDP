@@ -10,7 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Archivo+Expanded:wght@600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 
-<!-- Style spécifique pour la grille de vidéos verticales -->
+<!-- Style spécifique pour la grille de vidéos verticales et l'icône de chargement -->
 <style>
   .reels-grid {
     display: grid;
@@ -21,7 +21,7 @@
     position: relative;
     width: 100%;
     aspect-ratio: 9/16;
-    background: #000;
+    background: #111; /* Fond sombre pour l'attente du chargement */
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 20px rgba(0,0,0,0.3);
@@ -31,13 +31,27 @@
     inset: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Garde la vidéo en plein cadre sans bords noirs */
+    object-fit: cover;
+    z-index: 4;
     cursor: pointer;
     transition: transform 0.3s ease;
   }
   .reel-frame video:hover {
     transform: scale(1.02);
   }
+  
+  /* Le style de l'icône de chargement */
+  .spinner {
+    position: absolute; top: 50%; left: 50%;
+    width: 40px; height: 40px; margin: -20px 0 0 -20px;
+    border: 4px solid rgba(255,255,255,0.2);
+    border-top: 4px solid #fff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    z-index: 3;
+  }
+  @keyframes spin { 100% { transform: rotate(360deg); } }
+
   /* Adaptation pour les tablettes et téléphones */
   @media (max-width: 900px) {
     .reels-grid {
@@ -97,22 +111,52 @@
 <section class="pad" style="padding-top:0">
   <div class="wrap">
     <div class="sec-head reveal"><div><div class="eyebrow">Vidéos Verticales</div></div>
-      <p>Cliquez sur une vidéo pour activer le son et l'écouter.</p>
+      <p>Cliquez sur une vidéo pour l'agrandir et activer le son.</p>
     </div>
     
     <div class="reels-grid reveal">
-      <!-- Les onclick ont été retirés, le script en bas s'occupe de tout ! -->
+      <!-- Vidéo 1 -->
       <div class="reel-frame">
-        <video src="Vidéos/Cabane 57/V1-0001_Cabane_57_1080_00090000.mp4" autoplay loop muted playsinline></video>
+        <div class="spinner" id="loader-1"></div>
+        <video 
+          src="https://f003.backblazeb2.com/file/Portfolio33CAVALEC/V1-0001_Cabane_57_1080_00090000.mp4" 
+          autoplay loop muted playsinline preload="auto"
+          onplaying="document.getElementById('loader-1').style.display='none';"
+          onwaiting="document.getElementById('loader-1').style.display='block';">
+        </video>
       </div>
+
+      <!-- Vidéo 2 -->
       <div class="reel-frame">
-        <video src="Vidéos/Cabane 57/V1-0002_Cabane_57_1080_00090000.mp4" autoplay loop muted playsinline></video>
+        <div class="spinner" id="loader-2"></div>
+        <video 
+          src="https://f003.backblazeb2.com/file/Portfolio33CAVALEC/V1-0002_Cabane_57_1080_00090000.mp4" 
+          autoplay loop muted playsinline preload="auto"
+          onplaying="document.getElementById('loader-2').style.display='none';"
+          onwaiting="document.getElementById('loader-2').style.display='block';">
+        </video>
       </div>
+
+      <!-- Vidéo 3 -->
       <div class="reel-frame">
-        <video src="Vidéos/Cabane 57/V1-0003_Cabane_57_1080_00090000.mp4" autoplay loop muted playsinline></video>
+        <div class="spinner" id="loader-3"></div>
+        <video 
+          src="https://f003.backblazeb2.com/file/Portfolio33CAVALEC/V1-0003_Cabane_57_1080_00090000.mp4" 
+          autoplay loop muted playsinline preload="auto"
+          onplaying="document.getElementById('loader-3').style.display='none';"
+          onwaiting="document.getElementById('loader-3').style.display='block';">
+        </video>
       </div>
+
+      <!-- Vidéo 4 -->
       <div class="reel-frame">
-        <video src="Vidéos/Cabane 57/V1-0004_Cabane_57_1080_00090000.mp4" autoplay loop muted playsinline></video>
+        <div class="spinner" id="loader-4"></div>
+        <video 
+          src="https://f003.backblazeb2.com/file/Portfolio33CAVALEC/V1-0004_Cabane_57_1080_00090000.mp4" 
+          autoplay loop muted playsinline preload="auto"
+          onplaying="document.getElementById('loader-4').style.display='none';"
+          onwaiting="document.getElementById('loader-4').style.display='block';">
+        </video>
       </div>
     </div>
   </div>
@@ -187,7 +231,7 @@
 
     reels.forEach(video => {
       video.addEventListener('click', function() {
-        // 1. On parcourt toutes les autres vidéos pour les couper et les mettre en pause
+        // 1. On parcourt toutes les autres vidéos pour les couper et masquer leurs contrôles
         reels.forEach(v => {
           if (v !== this) {
             v.pause();
@@ -196,10 +240,10 @@
           }
         });
 
-        // 2. On active celle sur laquelle on vient de cliquer
-        this.muted = false;
-        this.controls = true;
-        if (this.paused) {
+        // 2. On active la vidéo actuelle uniquement si elle n'est pas déjà active
+        if (!this.controls) {
+          this.muted = false;
+          this.controls = true;
           this.play();
         }
       });

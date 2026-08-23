@@ -1,10 +1,71 @@
 <!DOCTYPE html>
 <html lang="fr">
+
+<style>
+  /* --- VOS PHOTOS (Même système que les autres pages) --- */
+  .photo-evenement-1 { background-image: url('Photos/Evenements/CHEMIN_DE_TA_PHOTO_1.jpg') !important; background-size: cover !important; background-position: center !important; }
+  .photo-evenement-2 { background-image: url('Photos/Evenements/CHEMIN_DE_TA_PHOTO_2.jpg') !important; background-size: cover !important; background-position: center !important; }
+  .photo-evenement-3 { background-image: url('Photos/Evenements/CHEMIN_DE_TA_PHOTO_3.jpg') !important; background-size: cover !important; background-position: center !important; }
+  .photo-evenement-4 { background-image: url('Photos/Evenements/CHEMIN_DE_TA_PHOTO_4.jpg') !important; background-size: cover !important; background-position: center !important; }
+  .photo-evenement-5 { background-image: url('Photos/Evenements/CHEMIN_DE_TA_PHOTO_5.jpg') !important; background-size: cover !important; background-position: center !important; }
+  .photo-evenement-6 { background-image: url('Photos/Evenements/CHEMIN_DE_TA_PHOTO_6.jpg') !important; background-size: cover !important; background-position: center !important; }
+  .photo-evenement-7 { background-image: url('Photos/Evenements/CHEMIN_DE_TA_PHOTO_7.jpg') !important; background-size: cover !important; background-position: center !important; }
+  .photo-evenement-8 { background-image: url('Photos/Evenements/CHEMIN_DE_TA_PHOTO_8.jpg') !important; background-size: cover !important; background-position: center !important; }
+
+  /* --- LIGHTBOX UNIQUE ET TAILLE RÉELLE --- */
+  #simple-lightbox {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 999999999;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Image en taille réelle, PAS cropée */
+  #lb-image {
+    max-width: 90vw;
+    max-height: 90vh;
+    object-fit: contain; 
+  }
+
+  /* Boutons de navigation */
+  .lb-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    color: white;
+    font-size: 60px;
+    border: none;
+    cursor: pointer;
+    padding: 20px;
+    z-index: 1000000000;
+  }
+  
+  .lb-btn:hover { color: #ccc; }
+  #lb-prev { left: 10px; }
+  #lb-next { right: 10px; }
+
+  /* Bouton Fermer */
+  #lb-close {
+    position: absolute;
+    top: 15px; right: 30px;
+    background: transparent;
+    color: white;
+    font-size: 50px;
+    border: none;
+    cursor: pointer;
+    z-index: 1000000000;
+  }
+</style>
+
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Événements & Reportages — Lancelot Cavalec</title>
-<meta name="description" content="Portfolio d'événements et reportages par Lancelot Cavalec. Capturer l'ambiance, les moments forts et l'authenticité de chaque instant." />
+<meta name="description" content="Portfolio d'événements et reportages par Lancelot Cavalec. Capturer l'ambiance, les moments forts et l'authenticité de chaque instant."[cite: 5] />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Archivo+Expanded:wght@600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -24,7 +85,7 @@
 </nav>
 
 <section class="detail-hero">
-  <div class="scene s-dusk"></div>
+  <div class="scene photo-evenement-1"></div>
   <div class="dh-inner wrap">
     <div class="crumbs"><a href="index.html">Accueil</a> / <a href="photos.html">Photo</a> / Événements & Reportages</div>
     <div class="dh-cat" style="margin-top:18px">Portfolio · Corporate & Culturel</div>
@@ -46,7 +107,7 @@
 <section class="pad">
   <div class="wrap">
     <div class="lede reveal">
-      <p class="big">Le reportage événementiel exige anticipation et discrétion. L'objectif est de s'effacer pour mieux saisir <b>l'ambiance, les interactions humaines et l'énergie singulière</b> qui se dégage de chaque rassemblement.</p>
+      <p class="big">Le reportage événementiel exige anticipation et discrétion. L'objectif est de s'effacer pour mieux saisir <b>l'ambiance, les interactions humaines et l'énergie singulière</b> qui se dégage de chaque rassemblement[cite: 5].</p>
       <div class="side">
         <span class="label">Expertises</span>
         <p>Événements Corporate</p>
@@ -61,16 +122,16 @@
 <section class="pad" style="padding-top:0">
   <div class="wrap">
     <div class="sec-head reveal"><div><div class="eyebrow">Galerie</div></div>
-      <p>Cliquez sur une image pour l'agrandir.</p></div>
+      <p>Cliquez sur une image pour l'afficher en plein écran.</p></div>
     <div class="gallery reveal">
-      <div class="shot" data-cap="Ambiance lors d'une keynote Tech"><div class="scene s-dusk"></div><div class="ar" style="aspect-ratio:3/2"></div><div class="cap">Ambiance lors d'une keynote Tech</div></div>
-      <div class="shot" data-cap="Concentration avant une intervention"><div class="scene s-storm"></div><div class="ar" style="aspect-ratio:4/3"></div><div class="cap">Concentration avant une intervention</div></div>
-      <div class="shot" data-cap="Échanges spontanés lors d'une soirée corporate"><div class="scene s-ridge"></div><div class="ar" style="aspect-ratio:2/3"></div><div class="cap">Échanges spontanés lors d'une soirée corporate</div></div>
-      <div class="shot" data-cap="Lumières de scène et atmosphère festival"><div class="scene s-pine"></div><div class="ar" style="aspect-ratio:3/2"></div><div class="cap">Lumières de scène et atmosphère festival</div></div>
-      <div class="shot" data-cap="Détail scénographique, jeu de textures"><div class="scene s-alpine"></div><div class="ar" style="aspect-ratio:4/5"></div><div class="cap">Détail scénographique, jeu de textures</div></div>
-      <div class="shot" data-cap="Foule et énergie lors d'un événement sportif"><div class="scene s-tide"></div><div class="ar" style="aspect-ratio:1/1"></div><div class="cap">Foule et énergie lors d'un événement sportif</div></div>
-      <div class="shot" data-cap="Portrait sur le vif, lumière naturelle"><div class="scene s-glacier"></div><div class="ar" style="aspect-ratio:3/4"></div><div class="cap">Portrait sur le vif, lumière naturelle</div></div>
-      <div class="shot" data-cap="Vue d'ensemble d'une salle de conférence"><div class="scene s-summit"></div><div class="ar" style="aspect-ratio:3/2"></div><div class="cap">Vue d'ensemble d'une salle de conférence</div></div>
+      <div class="shot" data-cap="Ambiance lors d'une keynote Tech"><div class="scene photo-evenement-1"></div><div class="ar" style="aspect-ratio:3/2"></div><div class="cap">Ambiance lors d'une keynote Tech</div></div>
+      <div class="shot" data-cap="Concentration avant une intervention"><div class="scene photo-evenement-2"></div><div class="ar" style="aspect-ratio:4/3"></div><div class="cap">Concentration avant une intervention</div></div>
+      <div class="shot" data-cap="Échanges spontanés lors d'une soirée corporate"><div class="scene photo-evenement-3"></div><div class="ar" style="aspect-ratio:2/3"></div><div class="cap">Échanges spontanés lors d'une soirée corporate</div></div>
+      <div class="shot" data-cap="Lumières de scène et atmosphère festival"><div class="scene photo-evenement-4"></div><div class="ar" style="aspect-ratio:3/2"></div><div class="cap">Lumières de scène et atmosphère festival</div></div>
+      <div class="shot" data-cap="Détail scénographique, jeu de textures"><div class="scene photo-evenement-5"></div><div class="ar" style="aspect-ratio:4/5"></div><div class="cap">Détail scénographique, jeu de textures</div></div>
+      <div class="shot" data-cap="Foule et énergie lors d'un événement sportif"><div class="scene photo-evenement-6"></div><div class="ar" style="aspect-ratio:1/1"></div><div class="cap">Foule et énergie lors d'un événement sportif</div></div>
+      <div class="shot" data-cap="Portrait sur le vif, lumière naturelle"><div class="scene photo-evenement-7"></div><div class="ar" style="aspect-ratio:3/4"></div><div class="cap">Portrait sur le vif, lumière naturelle</div></div>
+      <div class="shot" data-cap="Vue d'ensemble d'une salle de conférence"><div class="scene photo-evenement-8"></div><div class="ar" style="aspect-ratio:3/2"></div><div class="cap">Vue d'ensemble d'une salle de conférence</div></div>
     </div>
   </div>
 </section>
@@ -80,8 +141,8 @@
     <div class="proc reveal">
       <div class="label">Vision</div>
       <div>
-        <p>Dans la photographie de reportage, le photographe doit être partout sans être vu. Ma vision repose sur le <b>photojournalisme</b> : raconter le déroulement d'une journée en captant la spontanéité d'un sourire, l'intensité d'un discours ou l'effervescence des coulisses.</p>
-        <p>J'attache une grande importance à la cohérence visuelle, en livrant une série d'images où <b>l'esthétique globale et la colorimétrie</b> servent l'identité de l'événement et de la marque organisatrice.</p>
+        <p>Dans la photographie de reportage, le photographe doit être partout sans être vu. Ma vision repose sur le <b>photojournalisme</b> : raconter le déroulement d'une journée en captant la spontanéité d'un sourire, l'intensité d'un discours ou l'effervescence des coulisses[cite: 5].</p>
+        <p>J'attache une grande importance à la cohérence visuelle, en livrant une série d'images où <b>l'esthétique globale et la colorimétrie</b> servent l'identité de l'événement et de la marque organisatrice[cite: 5].</p>
       </div>
     </div>
   </div>
@@ -124,6 +185,61 @@
   </div>
 </footer>
 
+<!-- LE BLOC CACHÉ POUR AFFICHER LA PHOTO EN TAILLE RÉELLE -->
+<div id="simple-lightbox">
+  <button id="lb-close">&times;</button>
+  <button id="lb-prev" class="lb-btn">&#10094;</button>
+  <img id="lb-image" src="" alt="">
+  <button id="lb-next" class="lb-btn">&#10095;</button>
+</div>
+
 <script src="script.js"></script>
+
+<!-- SCRIPT DE NAVIGATION LIGHTBOX -->
+<script>
+  window.addEventListener('load', function() {
+    var shots = document.querySelectorAll('.shot');
+    var lightbox = document.getElementById('simple-lightbox');
+    var img = document.getElementById('lb-image');
+    var currentIndex = 0;
+
+    function afficherImage(index) {
+      currentIndex = index;
+      var scene = shots[index].querySelector('.scene');
+      var bg = window.getComputedStyle(scene).backgroundImage;
+      var url = bg.replace(/^url\(["']?/, '').replace(/["']?\)$/, ''); 
+      
+      img.src = url;
+      lightbox.style.display = 'flex';
+    }
+
+    for (var i = 0; i < shots.length; i++) {
+      (function(index) {
+        shots[index].style.cursor = 'pointer';
+        shots[index].addEventListener('click', function(e) {
+          e.stopPropagation(); 
+          e.stopImmediatePropagation();
+          afficherImage(index);
+        }, true); 
+      })(i);
+    }
+
+    document.getElementById('lb-close').addEventListener('click', function() {
+      lightbox.style.display = 'none';
+    });
+
+    document.getElementById('lb-next').addEventListener('click', function() {
+      currentIndex = (currentIndex + 1) % shots.length;
+      afficherImage(currentIndex);
+    });
+
+    document.getElementById('lb-prev').addEventListener('click', function() {
+      currentIndex = (currentIndex - 1 + shots.length) % shots.length;
+      afficherImage(currentIndex);
+    });
+  });
+</script>
+
 </body>
 </html>
+```[cite: 5]

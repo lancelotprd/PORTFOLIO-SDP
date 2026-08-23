@@ -1,5 +1,66 @@
 <!DOCTYPE html>
 <html lang="fr">
+
+<style>
+  /* --- VOS PHOTOS (Même système que la page Sport) --- */
+  .photo-nature-1 { background-image: url('Photos/Nature/CHEMIN_DE_TA_PHOTO_1.jpg') !important; background-size: cover !important; background-position: center !important; }
+  .photo-nature-2 { background-image: url('Photos/Nature/CHEMIN_DE_TA_PHOTO_2.jpg') !important; background-size: cover !important; background-position: center !important; }
+  .photo-nature-3 { background-image: url('Photos/Nature/CHEMIN_DE_TA_PHOTO_3.jpg') !important; background-size: cover !important; background-position: center !important; }
+  .photo-nature-4 { background-image: url('Photos/Nature/CHEMIN_DE_TA_PHOTO_4.jpg') !important; background-size: cover !important; background-position: center !important; }
+  .photo-nature-5 { background-image: url('Photos/Nature/CHEMIN_DE_TA_PHOTO_5.jpg') !important; background-size: cover !important; background-position: center !important; }
+  .photo-nature-6 { background-image: url('Photos/Nature/CHEMIN_DE_TA_PHOTO_6.jpg') !important; background-size: cover !important; background-position: center !important; }
+  .photo-nature-7 { background-image: url('Photos/Nature/CHEMIN_DE_TA_PHOTO_7.jpg') !important; background-size: cover !important; background-position: center !important; }
+  .photo-nature-8 { background-image: url('Photos/Nature/CHEMIN_DE_TA_PHOTO_8.jpg') !important; background-size: cover !important; background-position: center !important; }
+
+  /* --- LIGHTBOX UNIQUE ET TAILLE RÉELLE --- */
+  #simple-lightbox {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 999999999;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Image en taille réelle, PAS cropée */
+  #lb-image {
+    max-width: 90vw;
+    max-height: 90vh;
+    object-fit: contain; 
+  }
+
+  /* Boutons de navigation */
+  .lb-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    color: white;
+    font-size: 60px;
+    border: none;
+    cursor: pointer;
+    padding: 20px;
+    z-index: 1000000000;
+  }
+  
+  .lb-btn:hover { color: #ccc; }
+  #lb-prev { left: 10px; }
+  #lb-next { right: 10px; }
+
+  /* Bouton Fermer */
+  #lb-close {
+    position: absolute;
+    top: 15px; right: 30px;
+    background: transparent;
+    color: white;
+    font-size: 50px;
+    border: none;
+    cursor: pointer;
+    z-index: 1000000000;
+  }
+</style>
+
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -24,7 +85,7 @@
 </nav>
 
 <section class="detail-hero">
-  <div class="scene s-pine"></div>
+  <div class="scene photo-nature-1"></div>
   <div class="dh-inner wrap">
     <div class="crumbs"><a href="index.html">Accueil</a> / <a href="photos.html">Photo</a> / Nature</div>
     <div class="dh-cat" style="margin-top:18px">Portfolio · Nature & Paysage</div>
@@ -46,7 +107,7 @@
 <section class="pad">
   <div class="wrap">
     <div class="lede reveal">
-      <p class="big">Des crêtes acérées du Caucase aux tempêtes du littoral atlantique, la photographie de nature est une invitation à ralentir. Mon approche vise à capturer <b>la puissance brute et la quiétude</b> des grands espaces sauvages.</p>
+      <p class="big">Des crêtes acérées du Caucase aux tempêtes du littoral atlantique, la photographie de nature est une invitation à ralentir. Mon approche vise à capturer <b>la puissance brute et la quiétude</b> des grands espaces sauvages[cite: 4].</p>
       <div class="side">
         <span class="label">Expertises</span>
         <p>Paysages grandioses</p>
@@ -61,16 +122,16 @@
 <section class="pad" style="padding-top:0">
   <div class="wrap">
     <div class="sec-head reveal"><div><div class="eyebrow">Galerie</div></div>
-      <p>Cliquez sur une image pour l'agrandir.</p></div>
+      <p>Cliquez sur une image pour l'afficher en plein écran.</p></div>
     <div class="gallery reveal">
-      <div class="shot" data-cap="Montagnes géorgiennes, lumière matinale"><div class="scene s-summit"></div><div class="ar" style="aspect-ratio:3/2"></div><div class="cap">Montagnes géorgiennes, lumière matinale</div></div>
-      <div class="shot" data-cap="Écume et houle au Cap Ferret"><div class="scene s-tide"></div><div class="ar" style="aspect-ratio:4/3"></div><div class="cap">Écume et houle au Cap Ferret</div></div>
-      <div class="shot" data-cap="Forêt de pins plongée dans la brume"><div class="scene s-pine"></div><div class="ar" style="aspect-ratio:2/3"></div><div class="cap">Forêt de pins plongée dans la brume</div></div>
-      <div class="shot" data-cap="Lumière perçant les nuages de tempête"><div class="scene s-storm"></div><div class="ar" style="aspect-ratio:1/1"></div><div class="cap">Lumière perçant les nuages de tempête</div></div>
-      <div class="shot" data-cap="Texture glaciaire, reflets bleutés"><div class="scene s-glacier"></div><div class="ar" style="aspect-ratio:3/4"></div><div class="cap">Texture glaciaire, reflets bleutés</div></div>
-      <div class="shot" data-cap="L'immensité de l'océan au crépuscule"><div class="scene s-coast"></div><div class="ar" style="aspect-ratio:3/2"></div><div class="cap">L'immensité de l'océan au crépuscule</div></div>
-      <div class="shot" data-cap="Silhouette de crête à contre-jour"><div class="scene s-ridge"></div><div class="ar" style="aspect-ratio:4/5"></div><div class="cap">Silhouette de crête à contre-jour</div></div>
-      <div class="shot" data-cap="Vaste étendue désertique au lever du jour"><div class="scene s-desert"></div><div class="ar" style="aspect-ratio:3/4"></div><div class="cap">Vaste étendue désertique au lever du jour</div></div>
+      <div class="shot" data-cap="Montagnes géorgiennes, lumière matinale"><div class="scene photo-nature-1"></div><div class="ar" style="aspect-ratio:3/2"></div><div class="cap">Montagnes géorgiennes, lumière matinale</div></div>
+      <div class="shot" data-cap="Écume et houle au Cap Ferret"><div class="scene photo-nature-2"></div><div class="ar" style="aspect-ratio:4/3"></div><div class="cap">Écume et houle au Cap Ferret</div></div>
+      <div class="shot" data-cap="Forêt de pins plongée dans la brume"><div class="scene photo-nature-3"></div><div class="ar" style="aspect-ratio:2/3"></div><div class="cap">Forêt de pins plongée dans la brume</div></div>
+      <div class="shot" data-cap="Lumière perçant les nuages de tempête"><div class="scene photo-nature-4"></div><div class="ar" style="aspect-ratio:1/1"></div><div class="cap">Lumière perçant les nuages de tempête</div></div>
+      <div class="shot" data-cap="Texture glaciaire, reflets bleutés"><div class="scene photo-nature-5"></div><div class="ar" style="aspect-ratio:3/4"></div><div class="cap">Texture glaciaire, reflets bleutés</div></div>
+      <div class="shot" data-cap="L'immensité de l'océan au crépuscule"><div class="scene photo-nature-6"></div><div class="ar" style="aspect-ratio:3/2"></div><div class="cap">L'immensité de l'océan au crépuscule</div></div>
+      <div class="shot" data-cap="Silhouette de crête à contre-jour"><div class="scene photo-nature-7"></div><div class="ar" style="aspect-ratio:4/5"></div><div class="cap">Silhouette de crête à contre-jour</div></div>
+      <div class="shot" data-cap="Vaste étendue désertique au lever du jour"><div class="scene photo-nature-8"></div><div class="ar" style="aspect-ratio:3/4"></div><div class="cap">Vaste étendue désertique au lever du jour</div></div>
     </div>
   </div>
 </section>
@@ -80,8 +141,8 @@
     <div class="proc reveal">
       <div class="label">Vision</div>
       <div>
-        <p>Mon travail sur la nature nécessite de s'adapter aux caprices des éléments. Que ce soit pour attendre la lumière parfaite à l'aube sur un sommet ou pour saisir la violence d'une vague contre la roche, j'ai appris que <b>la nature dicte toujours ses propres conditions</b>.</p>
-        <p>À travers ces images, je cherche à retranscrire non seulement ce que l'on voit, mais surtout ce que l'on ressent face à l'immensité. C'est une recherche permanente d'équilibre entre l'immensité du panorama et l'intimité des détails, sublimée par une <b>lumière souvent dramatique</b>.</p>
+        <p>Mon travail sur la nature nécessite de s'adapter aux caprices des éléments. Que ce soit pour attendre la lumière parfaite à l'aube sur un sommet ou pour saisir la violence d'une vague contre la roche, j'ai appris que <b>la nature dicte toujours ses propres conditions</b>[cite: 4].</p>
+        <p>À travers ces images, je cherche à retranscrire non seulement ce que l'on voit, mais surtout ce que l'on ressent face à l'immensité. C'est une recherche permanente d'équilibre entre l'immensité du panorama et l'intimité des détails, sublimée par une <b>lumière souvent dramatique</b>[cite: 4].</p>
       </div>
     </div>
   </div>
@@ -124,6 +185,61 @@
   </div>
 </footer>
 
+<!-- LE BLOC CACHÉ POUR AFFICHER LA PHOTO EN TAILLE RÉELLE -->
+<div id="simple-lightbox">
+  <button id="lb-close">&times;</button>
+  <button id="lb-prev" class="lb-btn">&#10094;</button>
+  <img id="lb-image" src="" alt="">
+  <button id="lb-next" class="lb-btn">&#10095;</button>
+</div>
+
 <script src="script.js"></script>
+
+<!-- SCRIPT DE NAVIGATION LIGHTBOX -->
+<script>
+  window.addEventListener('load', function() {
+    var shots = document.querySelectorAll('.shot');
+    var lightbox = document.getElementById('simple-lightbox');
+    var img = document.getElementById('lb-image');
+    var currentIndex = 0;
+
+    function afficherImage(index) {
+      currentIndex = index;
+      var scene = shots[index].querySelector('.scene');
+      var bg = window.getComputedStyle(scene).backgroundImage;
+      var url = bg.replace(/^url\(["']?/, '').replace(/["']?\)$/, ''); 
+      
+      img.src = url;
+      lightbox.style.display = 'flex';
+    }
+
+    for (var i = 0; i < shots.length; i++) {
+      (function(index) {
+        shots[index].style.cursor = 'pointer';
+        shots[index].addEventListener('click', function(e) {
+          e.stopPropagation(); 
+          e.stopImmediatePropagation();
+          afficherImage(index);
+        }, true); 
+      })(i);
+    }
+
+    document.getElementById('lb-close').addEventListener('click', function() {
+      lightbox.style.display = 'none';
+    });
+
+    document.getElementById('lb-next').addEventListener('click', function() {
+      currentIndex = (currentIndex + 1) % shots.length;
+      afficherImage(currentIndex);
+    });
+
+    document.getElementById('lb-prev').addEventListener('click', function() {
+      currentIndex = (currentIndex - 1 + shots.length) % shots.length;
+      afficherImage(currentIndex);
+    });
+  });
+</script>
+
 </body>
 </html>
+```[cite: 4]
